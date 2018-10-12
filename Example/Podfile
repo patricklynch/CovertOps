@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'OperationKit_Example' do
+  pod 'OperationKit', :path => '../'
+
+  target 'OperationKit_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
