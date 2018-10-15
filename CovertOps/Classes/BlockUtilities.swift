@@ -1,14 +1,14 @@
 import Foundation
 
-class AsyncMain: AsyncMainOperation<Void> {
+public final class AsyncMain: AsyncMainOperation<Void> {
     
     let block: (AsyncMain) -> ()
     
-    init(block: @escaping (AsyncMain) -> ()) {
+    public init(block: @escaping (AsyncMain) -> ()) {
         self.block = block
     }
     
-    override func execute() {
+    override public func execute() {
         block(self)
     }
     
@@ -17,28 +17,28 @@ class AsyncMain: AsyncMainOperation<Void> {
     }
 }
 
-class SyncMain: AsyncMainOperation<Void> {
+public final class SyncMain: AsyncMainOperation<Void> {
     
     let block:(Operation)->()
     
-    init(block: @escaping (Operation)->()) {
+    public init(block: @escaping (Operation)->()) {
         self.block = block
     }
     
-    override func execute() {
+    override public func execute() {
         finish(output: block(self))
     }
 }
 
-class Sync<OutputType>: QueueableOperation<OutputType> {
+public final class Sync<OutputType>: QueueableOperation<OutputType> {
     
     let block: (Operation) -> (OutputType?)
     
-    init(block: @escaping (Operation) -> (OutputType?)) {
+    public init(block: @escaping (Operation) -> (OutputType?)) {
         self.block = block
     }
     
-    override func main() {
+    override public func main() {
         self.output = block(self)
     }
 }

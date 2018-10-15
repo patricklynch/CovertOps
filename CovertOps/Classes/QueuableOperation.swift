@@ -4,17 +4,17 @@ private var _retainedOperations = Set<Operation>()
 
 open class QueueableOperation<OutputType>: Operation {
     
-    final public internal(set) var output: OutputType?
+    final public var output: OutputType?
     
     /// Create an array of `Operation` instances to be be queued as dependants of (after) the receiver.
     /// Intended only for use by ovrriding in subclasses.  Default value is empty array and has no effect.
-    func createDependants() -> [Operation] {
+    open func createDependants() -> [Operation] {
         return []
     }
     
     /// Create an array of `Operation` instances to be be queued as dependants of (after) the receiver.
     /// Intended only for use by ovrriding in subclasses.  Default value is empty array and has no effect.
-    func createDependencies() -> [Operation] {
+    open func createDependencies() -> [Operation] {
         return []
     }
     
@@ -22,7 +22,7 @@ open class QueueableOperation<OutputType>: Operation {
         super.init()
         
         for operation in createDependencies() {
-            self.after(operation)
+            self.following(operation)
             OperationQueue.default.addOperation(operation)
         }
         
@@ -35,29 +35,29 @@ open class QueueableOperation<OutputType>: Operation {
     private var dependenciesHashMap = NSHashTable<Operation>(options: [.weakMemory])
     private var dependentsHashMap = NSHashTable<Operation>(options: [.weakMemory])
     
-    final var dependents: [Operation] {
+    public final var dependents: [Operation] {
         return dependentsHashMap.allObjects
     }
     
-    func valueFromDependency<T>() -> T? {
+    public final func valueFromDependency<T>() -> T? {
         let typedDependencies = dependencies.compactMap { $0 as? QueueableOperation<T> }
         guard !typedDependencies.isEmpty else { return nil }
         return typedDependencies.compactMap { $0.output }.first
     }
     
-    func typedDependency<DependencyType>() -> DependencyType? {
+    public final func typedDependency<DependencyType>() -> DependencyType? {
         return dependencies.compactMap { $0 as? DependencyType }.first
     }
     
     @discardableResult
-    func then<T>(_ nextOperation: QueueableOperation<T>, mainQueueCompletionBlock: ((T?)->())? = nil) -> QueueableOperation<OutputType> {
+    public final func followed<T>(by nextOperation: QueueableOperation<T>, mainQueueCompletionBlock: ((T?)->())? = nil) -> QueueableOperation<OutputType> {
         nextOperation.addDependency(self)
         nextOperation.queue(mainQueueCompletionBlock: mainQueueCompletionBlock)
         return self
     }
     
     @discardableResult
-    func then(_ mainQueueCompletionBlock: @escaping (QueueableOperation<OutputType>, OutputType?)->()) -> QueueableOperation<OutputType> {
+    public final func then(_ mainQueueCompletionBlock: @escaping (QueueableOperation<OutputType>, OutputType?)->()) -> QueueableOperation<OutputType> {
         completionBlock = { [weak self] in
             guard let strelf = self else {
                 return
@@ -71,13 +71,13 @@ open class QueueableOperation<OutputType>: Operation {
     }
     
     @discardableResult
-    func before(_ dependant: Operation) -> QueueableOperation<OutputType> {
+    public final func before(_ dependant: Operation) -> QueueableOperation<OutputType> {
         dependant.addDependency(self)
         return self
     }
     
     @discardableResult
-    func after(_ dependency: Operation) -> QueueableOperation<OutputType> {
+    public final func following(_ dependency: Operation) -> QueueableOperation<OutputType> {
         addDependency(dependency)
         return self
     }
@@ -107,7 +107,7 @@ open class QueueableOperation<OutputType>: Operation {
             _retainedOperations.insert(self)
         }
         if let dependency = dependency {
-            self.after(dependency)
+            self.following(dependency)
         }
         if let dependant = dependant {
             self.before(dependant)

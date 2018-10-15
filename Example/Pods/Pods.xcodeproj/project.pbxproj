@@ -15,6 +15,10 @@
 		78C6385F2174EF9500947A30 /* OperationQueue+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C6385A2174EF9500947A30 /* OperationQueue+.swift */; };
 		78C638602174EF9500947A30 /* QueuableOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C6385B2174EF9500947A30 /* QueuableOperation.swift */; };
 		78C638612174EF9500947A30 /* BlockUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C6385C2174EF9500947A30 /* BlockUtilities.swift */; };
+		78C6387B2174F85D00947A30 /* Wait.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C638772174F85900947A30 /* Wait.swift */; };
+		78C6387C2174F85D00947A30 /* Observe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C638782174F85900947A30 /* Observe.swift */; };
+		78C6387D2174F85D00947A30 /* CompoundOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C638792174F85900947A30 /* CompoundOperation.swift */; };
+		78C6387E2174F85D00947A30 /* Repeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C6387A2174F85C00947A30 /* Repeat.swift */; };
 		7C3F5E87B9A7AB4E6E89E63973DE2AA5 /* Pods-CovertOps_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8D4E90254C3DC07263A500A8D9166744 /* Pods-CovertOps_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A3489EA288C6AC20E0DE2229A0D0B1EF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
 		C7F9A20EDA800FA800DFB53F0EF9C27B /* Pods-CovertOps_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C0449ECFF5ECEE31FB4EAAA9AAC261E8 /* Pods-CovertOps_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -62,6 +66,10 @@
 		78C6385A2174EF9500947A30 /* OperationQueue+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "OperationQueue+.swift"; path = "CovertOps/Classes/OperationQueue+.swift"; sourceTree = "<group>"; };
 		78C6385B2174EF9500947A30 /* QueuableOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QueuableOperation.swift; path = CovertOps/Classes/QueuableOperation.swift; sourceTree = "<group>"; };
 		78C6385C2174EF9500947A30 /* BlockUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BlockUtilities.swift; path = CovertOps/Classes/BlockUtilities.swift; sourceTree = "<group>"; };
+		78C638772174F85900947A30 /* Wait.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Wait.swift; path = CovertOps/Classes/Wait.swift; sourceTree = "<group>"; };
+		78C638782174F85900947A30 /* Observe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Observe.swift; path = CovertOps/Classes/Observe.swift; sourceTree = "<group>"; };
+		78C638792174F85900947A30 /* CompoundOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CompoundOperation.swift; path = CovertOps/Classes/CompoundOperation.swift; sourceTree = "<group>"; };
+		78C6387A2174F85C00947A30 /* Repeat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Repeat.swift; path = CovertOps/Classes/Repeat.swift; sourceTree = "<group>"; };
 		8D4E90254C3DC07263A500A8D9166744 /* Pods-CovertOps_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CovertOps_Example-umbrella.h"; sourceTree = "<group>"; };
 		908A599CBC65F00868E7AEA51E3834B9 /* Pods-CovertOps_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CovertOps_Example-resources.sh"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -134,8 +142,12 @@
 				78C638582174EF9500947A30 /* Array+.swift */,
 				78C638592174EF9500947A30 /* AsyncOperation.swift */,
 				78C6385C2174EF9500947A30 /* BlockUtilities.swift */,
+				78C638792174F85900947A30 /* CompoundOperation.swift */,
+				78C638782174F85900947A30 /* Observe.swift */,
 				78C6385A2174EF9500947A30 /* OperationQueue+.swift */,
 				78C6385B2174EF9500947A30 /* QueuableOperation.swift */,
+				78C6387A2174F85C00947A30 /* Repeat.swift */,
+				78C638772174F85900947A30 /* Wait.swift */,
 				52A6B2866EB9890A9BF13F1C1F6D36AB /* Pod */,
 				417617C8C035F0427A68639FF1DC2348 /* Support Files */,
 			);
@@ -403,11 +415,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78C6387E2174F85D00947A30 /* Repeat.swift in Sources */,
 				73A6D840D7642C73A453E82580905F4F /* CovertOps-dummy.m in Sources */,
 				78C6385F2174EF9500947A30 /* OperationQueue+.swift in Sources */,
+				78C6387B2174F85D00947A30 /* Wait.swift in Sources */,
 				78C638612174EF9500947A30 /* BlockUtilities.swift in Sources */,
 				78C6385E2174EF9500947A30 /* AsyncOperation.swift in Sources */,
 				78C638602174EF9500947A30 /* QueuableOperation.swift in Sources */,
+				78C6387C2174F85D00947A30 /* Observe.swift in Sources */,
+				78C6387D2174F85D00947A30 /* CompoundOperation.swift in Sources */,
 				78C6385D2174EF9500947A30 /* Array+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

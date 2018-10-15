@@ -20,7 +20,7 @@ open class AsyncOperation<OutputType>: QueueableOperation<OutputType> {
         wait()
     }
     
-    func operationWillFinish(output: OutputType?) { }
+    open func operationWillFinish(output: OutputType?) { }
     
     final func wait() {
         let _ = semaphore.wait(timeout: DispatchTime.distantFuture)
