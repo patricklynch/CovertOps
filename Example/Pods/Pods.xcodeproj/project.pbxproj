@@ -10,16 +10,16 @@
 		4EABDCC5A40837CC720073954201B1C1 /* CovertOps-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EF970174D9D5E05720508924985E7E04 /* CovertOps-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		65189A027F2A4A201C624DBAD17FFBC6 /* Pods-CovertOps_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F2D89655B23AFDF8BBCCD5BC9520C321 /* Pods-CovertOps_Example-dummy.m */; };
 		73A6D840D7642C73A453E82580905F4F /* CovertOps-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BB8DF35A287C6260FD38A79A80463267 /* CovertOps-dummy.m */; };
-		78F846ED21709FC300AE0648 /* BlockUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F846EC21709FC300AE0648 /* BlockUtilities.swift */; };
-		78F846EF21709FF700AE0648 /* AsyncOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F846EE21709FF700AE0648 /* AsyncOperation.swift */; };
-		78F846F12170A04700AE0648 /* Array+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F846F02170A04700AE0648 /* Array+.swift */; };
-		78F846F32170A06200AE0648 /* OperationQueue+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F846F22170A06200AE0648 /* OperationQueue+.swift */; };
+		78C638492174EAFF00947A30 /* Array+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F846F02170A04700AE0648 /* Array+.swift */; };
+		78C6384A2174EAFF00947A30 /* AsyncOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F846EE21709FF700AE0648 /* AsyncOperation.swift */; };
+		78C6384B2174EAFF00947A30 /* BlockUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F846EC21709FC300AE0648 /* BlockUtilities.swift */; };
+		78C6384C2174EAFF00947A30 /* OperationQueue+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F846F22170A06200AE0648 /* OperationQueue+.swift */; };
+		78C6384D2174EAFF00947A30 /* QueuableOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE1CB39C0CAF5923D6C1D6A6B95019E /* QueuableOperation.swift */; };
 		7C3F5E87B9A7AB4E6E89E63973DE2AA5 /* Pods-CovertOps_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8D4E90254C3DC07263A500A8D9166744 /* Pods-CovertOps_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A3489EA288C6AC20E0DE2229A0D0B1EF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
 		C7F9A20EDA800FA800DFB53F0EF9C27B /* Pods-CovertOps_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C0449ECFF5ECEE31FB4EAAA9AAC261E8 /* Pods-CovertOps_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CF7D15BBFD4CC7D25CFA379567E3C56C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
 		D387590BEAE8E8D507008454F679A643 /* Pods-CovertOps_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B082C808EABF6434F056E2DD70E3129C /* Pods-CovertOps_Tests-dummy.m */; };
-		EEF0A4970E776FCDC48AAC7728A7AA15 /* QueuableOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE1CB39C0CAF5923D6C1D6A6B95019E /* QueuableOperation.swift */; };
 		F7996A75DAB269990F04ADF9A004AEE7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
@@ -404,11 +404,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				73A6D840D7642C73A453E82580905F4F /* CovertOps-dummy.m in Sources */,
-				78F846F32170A06200AE0648 /* OperationQueue+.swift in Sources */,
-				EEF0A4970E776FCDC48AAC7728A7AA15 /* QueuableOperation.swift in Sources */,
-				78F846EF21709FF700AE0648 /* AsyncOperation.swift in Sources */,
-				78F846ED21709FC300AE0648 /* BlockUtilities.swift in Sources */,
-				78F846F12170A04700AE0648 /* Array+.swift in Sources */,
+				78C6384D2174EAFF00947A30 /* QueuableOperation.swift in Sources */,
+				78C6384A2174EAFF00947A30 /* AsyncOperation.swift in Sources */,
+				78C6384B2174EAFF00947A30 /* BlockUtilities.swift in Sources */,
+				78C6384C2174EAFF00947A30 /* OperationQueue+.swift in Sources */,
+				78C638492174EAFF00947A30 /* Array+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

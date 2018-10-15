@@ -10,7 +10,7 @@ extension OperationQueue {
         return operationQueue
     }
     
-    static var `default`: OperationQueue {
+    static internal var `default`: OperationQueue {
         return _defaultQueue
     }
     
@@ -45,3 +45,4 @@ extension OperationQueue {
         return allOperations
     }
 }
+
