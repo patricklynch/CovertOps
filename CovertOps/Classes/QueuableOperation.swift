@@ -84,7 +84,7 @@ open class QueueableOperation<OutputType>: Operation {
     
     /// Subclasses may override to specify a queue that they would like to use.
     /// The default return value is `OperationQueue.default`
-    var preferredQueue: OperationQueue {
+    open var preferredQueue: OperationQueue {
         return OperationQueue.default
     }
     
