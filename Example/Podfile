@@ -1,9 +1,9 @@
 use_frameworks!
 
-target 'OperationKit_Example' do
-  pod 'OperationKit', :path => '../'
+target 'CovertOps_Example' do
+  pod 'CovertOps', :path => '../'
 
-  target 'OperationKit_Tests' do
+  target 'CovertOps_Tests' do
     inherit! :search_paths
 
     

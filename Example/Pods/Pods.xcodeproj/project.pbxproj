@@ -7,18 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4EABDCC5A40837CC720073954201B1C1 /* OperationKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EF970174D9D5E05720508924985E7E04 /* OperationKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		65189A027F2A4A201C624DBAD17FFBC6 /* Pods-OperationKit_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F2D89655B23AFDF8BBCCD5BC9520C321 /* Pods-OperationKit_Example-dummy.m */; };
-		73A6D840D7642C73A453E82580905F4F /* OperationKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BB8DF35A287C6260FD38A79A80463267 /* OperationKit-dummy.m */; };
+		4EABDCC5A40837CC720073954201B1C1 /* CovertOps-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EF970174D9D5E05720508924985E7E04 /* CovertOps-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		65189A027F2A4A201C624DBAD17FFBC6 /* Pods-CovertOps_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F2D89655B23AFDF8BBCCD5BC9520C321 /* Pods-CovertOps_Example-dummy.m */; };
+		73A6D840D7642C73A453E82580905F4F /* CovertOps-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BB8DF35A287C6260FD38A79A80463267 /* CovertOps-dummy.m */; };
 		78F846ED21709FC300AE0648 /* BlockUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F846EC21709FC300AE0648 /* BlockUtilities.swift */; };
 		78F846EF21709FF700AE0648 /* AsyncOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F846EE21709FF700AE0648 /* AsyncOperation.swift */; };
 		78F846F12170A04700AE0648 /* Array+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F846F02170A04700AE0648 /* Array+.swift */; };
 		78F846F32170A06200AE0648 /* OperationQueue+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F846F22170A06200AE0648 /* OperationQueue+.swift */; };
-		7C3F5E87B9A7AB4E6E89E63973DE2AA5 /* Pods-OperationKit_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8D4E90254C3DC07263A500A8D9166744 /* Pods-OperationKit_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7C3F5E87B9A7AB4E6E89E63973DE2AA5 /* Pods-CovertOps_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8D4E90254C3DC07263A500A8D9166744 /* Pods-CovertOps_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A3489EA288C6AC20E0DE2229A0D0B1EF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
-		C7F9A20EDA800FA800DFB53F0EF9C27B /* Pods-OperationKit_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C0449ECFF5ECEE31FB4EAAA9AAC261E8 /* Pods-OperationKit_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C7F9A20EDA800FA800DFB53F0EF9C27B /* Pods-CovertOps_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C0449ECFF5ECEE31FB4EAAA9AAC261E8 /* Pods-CovertOps_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CF7D15BBFD4CC7D25CFA379567E3C56C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
-		D387590BEAE8E8D507008454F679A643 /* Pods-OperationKit_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B082C808EABF6434F056E2DD70E3129C /* Pods-OperationKit_Tests-dummy.m */; };
+		D387590BEAE8E8D507008454F679A643 /* Pods-CovertOps_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B082C808EABF6434F056E2DD70E3129C /* Pods-CovertOps_Tests-dummy.m */; };
 		EEF0A4970E776FCDC48AAC7728A7AA15 /* QueuableOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE1CB39C0CAF5923D6C1D6A6B95019E /* QueuableOperation.swift */; };
 		F7996A75DAB269990F04ADF9A004AEE7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
 /* End PBXBuildFile section */
@@ -29,57 +29,57 @@
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 965A066F3002F6D3F55035E9EAA06331;
-			remoteInfo = OperationKit;
+			remoteInfo = CovertOps;
 		};
 		D3590A6972F89F205183D88850DA1331 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = E9A4BFA0AA466B76F7BBF1745131F69F;
-			remoteInfo = "Pods-OperationKit_Example";
+			remoteInfo = "Pods-CovertOps_Example";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		04480728D5EDC0A637C8FDD3807EF214 /* Pods-OperationKit_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-OperationKit_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		0475A31F316B327C227A8F13D422704B /* Pods_OperationKit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OperationKit_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		04480728D5EDC0A637C8FDD3807EF214 /* Pods-CovertOps_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CovertOps_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		0475A31F316B327C227A8F13D422704B /* Pods_CovertOps_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CovertOps_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C3ACDA7326F81892104944B5CA8BD2E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3C86C1BF7F0C68148B6C03208A14B6AB /* Pods-OperationKit_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-OperationKit_Example.release.xcconfig"; sourceTree = "<group>"; };
-		404B71221870D9CDA8417FA3B62EF416 /* Pods-OperationKit_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-OperationKit_Example.modulemap"; sourceTree = "<group>"; };
-		46B2341247E0E32FB227EBA188C823A5 /* Pods-OperationKit_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-OperationKit_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		495C20A76977C93535296CF8F3FC0A09 /* OperationKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OperationKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4EBF58D127DC7FB9B2BC955A8D9DE145 /* Pods-OperationKit_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-OperationKit_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		52D29A02480126DA62A1391DDD0F389B /* OperationKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = OperationKit.podspec; sourceTree = "<group>"; };
-		56B25F67AAD11E04290247DD6338B427 /* Pods-OperationKit_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-OperationKit_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		59D1D913A801480A9D1E9E82CF63CA42 /* Pods-OperationKit_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-OperationKit_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		3C86C1BF7F0C68148B6C03208A14B6AB /* Pods-CovertOps_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CovertOps_Example.release.xcconfig"; sourceTree = "<group>"; };
+		404B71221870D9CDA8417FA3B62EF416 /* Pods-CovertOps_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-CovertOps_Example.modulemap"; sourceTree = "<group>"; };
+		46B2341247E0E32FB227EBA188C823A5 /* Pods-CovertOps_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CovertOps_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		495C20A76977C93535296CF8F3FC0A09 /* CovertOps.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CovertOps.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4EBF58D127DC7FB9B2BC955A8D9DE145 /* Pods-CovertOps_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CovertOps_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		52D29A02480126DA62A1391DDD0F389B /* CovertOps.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = CovertOps.podspec; sourceTree = "<group>"; };
+		56B25F67AAD11E04290247DD6338B427 /* Pods-CovertOps_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CovertOps_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		59D1D913A801480A9D1E9E82CF63CA42 /* Pods-CovertOps_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CovertOps_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		68C8357232A3C3459E060A6D80852311 /* Pods-OperationKit_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-OperationKit_Example-frameworks.sh"; sourceTree = "<group>"; };
-		68F2CAC28090CB96F7B1A3F762A5FEEB /* Pods-OperationKit_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-OperationKit_Tests-frameworks.sh"; sourceTree = "<group>"; };
+		68C8357232A3C3459E060A6D80852311 /* Pods-CovertOps_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CovertOps_Example-frameworks.sh"; sourceTree = "<group>"; };
+		68F2CAC28090CB96F7B1A3F762A5FEEB /* Pods-CovertOps_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CovertOps_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		6B59A76339BBB5472A722BE7FE8515F7 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7661D48AD9CF967623B57E2061DBBFAD /* Pods-OperationKit_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-OperationKit_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		7661D48AD9CF967623B57E2061DBBFAD /* Pods-CovertOps_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CovertOps_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		78F846EC21709FC300AE0648 /* BlockUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockUtilities.swift; sourceTree = "<group>"; };
 		78F846EE21709FF700AE0648 /* AsyncOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncOperation.swift; sourceTree = "<group>"; };
 		78F846F02170A04700AE0648 /* Array+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+.swift"; sourceTree = "<group>"; };
 		78F846F22170A06200AE0648 /* OperationQueue+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OperationQueue+.swift"; sourceTree = "<group>"; };
-		8D4E90254C3DC07263A500A8D9166744 /* Pods-OperationKit_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-OperationKit_Example-umbrella.h"; sourceTree = "<group>"; };
-		908A599CBC65F00868E7AEA51E3834B9 /* Pods-OperationKit_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-OperationKit_Example-resources.sh"; sourceTree = "<group>"; };
+		8D4E90254C3DC07263A500A8D9166744 /* Pods-CovertOps_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CovertOps_Example-umbrella.h"; sourceTree = "<group>"; };
+		908A599CBC65F00868E7AEA51E3834B9 /* Pods-CovertOps_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CovertOps_Example-resources.sh"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		B082C808EABF6434F056E2DD70E3129C /* Pods-OperationKit_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-OperationKit_Tests-dummy.m"; sourceTree = "<group>"; };
+		B082C808EABF6434F056E2DD70E3129C /* Pods-CovertOps_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CovertOps_Tests-dummy.m"; sourceTree = "<group>"; };
 		B4ADDACCABBCC27CAF4F0093E1345382 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B4BB698A1A7005D12743DAB569CC67AD /* Pods-OperationKit_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-OperationKit_Tests-resources.sh"; sourceTree = "<group>"; };
-		B6E349481C42E09A20049270F18E34A6 /* Pods_OperationKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OperationKit_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BB8DF35A287C6260FD38A79A80463267 /* OperationKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "OperationKit-dummy.m"; sourceTree = "<group>"; };
-		BD53DC4684AA278F25AAE75F5C8C4B3E /* OperationKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "OperationKit-prefix.pch"; sourceTree = "<group>"; };
-		C0449ECFF5ECEE31FB4EAAA9AAC261E8 /* Pods-OperationKit_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-OperationKit_Tests-umbrella.h"; sourceTree = "<group>"; };
-		C41EC4886D83C1168540C2EE8A02C6D8 /* Pods-OperationKit_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-OperationKit_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		C515D3D4A3EDCFA49B8F42311324D954 /* OperationKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = OperationKit.xcconfig; sourceTree = "<group>"; };
+		B4BB698A1A7005D12743DAB569CC67AD /* Pods-CovertOps_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CovertOps_Tests-resources.sh"; sourceTree = "<group>"; };
+		B6E349481C42E09A20049270F18E34A6 /* Pods_CovertOps_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CovertOps_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB8DF35A287C6260FD38A79A80463267 /* CovertOps-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CovertOps-dummy.m"; sourceTree = "<group>"; };
+		BD53DC4684AA278F25AAE75F5C8C4B3E /* CovertOps-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CovertOps-prefix.pch"; sourceTree = "<group>"; };
+		C0449ECFF5ECEE31FB4EAAA9AAC261E8 /* Pods-CovertOps_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CovertOps_Tests-umbrella.h"; sourceTree = "<group>"; };
+		C41EC4886D83C1168540C2EE8A02C6D8 /* Pods-CovertOps_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CovertOps_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		C515D3D4A3EDCFA49B8F42311324D954 /* CovertOps.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CovertOps.xcconfig; sourceTree = "<group>"; };
 		C6B27EF87D6E18C12D6083350C1E3551 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		CBE1CB39C0CAF5923D6C1D6A6B95019E /* QueuableOperation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = QueuableOperation.swift; path = OperationKit/Classes/QueuableOperation.swift; sourceTree = "<group>"; };
+		CBE1CB39C0CAF5923D6C1D6A6B95019E /* QueuableOperation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = QueuableOperation.swift; path = CovertOps/Classes/QueuableOperation.swift; sourceTree = "<group>"; };
 		DF1D86ADE465B7473EE6433BB6DDC0BF /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		EC708424CDFD0E0CABF8FD90604668B6 /* Pods-OperationKit_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-OperationKit_Tests.modulemap"; sourceTree = "<group>"; };
-		EF970174D9D5E05720508924985E7E04 /* OperationKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "OperationKit-umbrella.h"; sourceTree = "<group>"; };
-		F2D89655B23AFDF8BBCCD5BC9520C321 /* Pods-OperationKit_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-OperationKit_Example-dummy.m"; sourceTree = "<group>"; };
-		FA4C713C9FC5F533F5028D76A9817234 /* OperationKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = OperationKit.modulemap; sourceTree = "<group>"; };
+		EC708424CDFD0E0CABF8FD90604668B6 /* Pods-CovertOps_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-CovertOps_Tests.modulemap"; sourceTree = "<group>"; };
+		EF970174D9D5E05720508924985E7E04 /* CovertOps-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CovertOps-umbrella.h"; sourceTree = "<group>"; };
+		F2D89655B23AFDF8BBCCD5BC9520C321 /* Pods-CovertOps_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CovertOps_Example-dummy.m"; sourceTree = "<group>"; };
+		FA4C713C9FC5F533F5028D76A9817234 /* CovertOps.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = CovertOps.modulemap; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,25 +110,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0A6DFE559C5D8CAFE19C9F8F2BC07E0C /* Pods-OperationKit_Tests */ = {
+		0A6DFE559C5D8CAFE19C9F8F2BC07E0C /* Pods-CovertOps_Tests */ = {
 			isa = PBXGroup;
 			children = (
 				1C3ACDA7326F81892104944B5CA8BD2E /* Info.plist */,
-				EC708424CDFD0E0CABF8FD90604668B6 /* Pods-OperationKit_Tests.modulemap */,
-				7661D48AD9CF967623B57E2061DBBFAD /* Pods-OperationKit_Tests-acknowledgements.markdown */,
-				59D1D913A801480A9D1E9E82CF63CA42 /* Pods-OperationKit_Tests-acknowledgements.plist */,
-				B082C808EABF6434F056E2DD70E3129C /* Pods-OperationKit_Tests-dummy.m */,
-				68F2CAC28090CB96F7B1A3F762A5FEEB /* Pods-OperationKit_Tests-frameworks.sh */,
-				B4BB698A1A7005D12743DAB569CC67AD /* Pods-OperationKit_Tests-resources.sh */,
-				C0449ECFF5ECEE31FB4EAAA9AAC261E8 /* Pods-OperationKit_Tests-umbrella.h */,
-				46B2341247E0E32FB227EBA188C823A5 /* Pods-OperationKit_Tests.debug.xcconfig */,
-				C41EC4886D83C1168540C2EE8A02C6D8 /* Pods-OperationKit_Tests.release.xcconfig */,
+				EC708424CDFD0E0CABF8FD90604668B6 /* Pods-CovertOps_Tests.modulemap */,
+				7661D48AD9CF967623B57E2061DBBFAD /* Pods-CovertOps_Tests-acknowledgements.markdown */,
+				59D1D913A801480A9D1E9E82CF63CA42 /* Pods-CovertOps_Tests-acknowledgements.plist */,
+				B082C808EABF6434F056E2DD70E3129C /* Pods-CovertOps_Tests-dummy.m */,
+				68F2CAC28090CB96F7B1A3F762A5FEEB /* Pods-CovertOps_Tests-frameworks.sh */,
+				B4BB698A1A7005D12743DAB569CC67AD /* Pods-CovertOps_Tests-resources.sh */,
+				C0449ECFF5ECEE31FB4EAAA9AAC261E8 /* Pods-CovertOps_Tests-umbrella.h */,
+				46B2341247E0E32FB227EBA188C823A5 /* Pods-CovertOps_Tests.debug.xcconfig */,
+				C41EC4886D83C1168540C2EE8A02C6D8 /* Pods-CovertOps_Tests.release.xcconfig */,
 			);
-			name = "Pods-OperationKit_Tests";
-			path = "Target Support Files/Pods-OperationKit_Tests";
+			name = "Pods-CovertOps_Tests";
+			path = "Target Support Files/Pods-CovertOps_Tests";
 			sourceTree = "<group>";
 		};
-		295EDCA9035D1AC6DDC6985A962F73FB /* OperationKit */ = {
+		295EDCA9035D1AC6DDC6985A962F73FB /* CovertOps */ = {
 			isa = PBXGroup;
 			children = (
 				78F846F02170A04700AE0648 /* Array+.swift */,
@@ -139,7 +139,7 @@
 				52A6B2866EB9890A9BF13F1C1F6D36AB /* Pod */,
 				417617C8C035F0427A68639FF1DC2348 /* Support Files */,
 			);
-			name = OperationKit;
+			name = CovertOps;
 			path = ../..;
 			sourceTree = "<group>";
 		};
@@ -147,21 +147,21 @@
 			isa = PBXGroup;
 			children = (
 				B4ADDACCABBCC27CAF4F0093E1345382 /* Info.plist */,
-				FA4C713C9FC5F533F5028D76A9817234 /* OperationKit.modulemap */,
-				C515D3D4A3EDCFA49B8F42311324D954 /* OperationKit.xcconfig */,
-				BB8DF35A287C6260FD38A79A80463267 /* OperationKit-dummy.m */,
-				BD53DC4684AA278F25AAE75F5C8C4B3E /* OperationKit-prefix.pch */,
-				EF970174D9D5E05720508924985E7E04 /* OperationKit-umbrella.h */,
+				FA4C713C9FC5F533F5028D76A9817234 /* CovertOps.modulemap */,
+				C515D3D4A3EDCFA49B8F42311324D954 /* CovertOps.xcconfig */,
+				BB8DF35A287C6260FD38A79A80463267 /* CovertOps-dummy.m */,
+				BD53DC4684AA278F25AAE75F5C8C4B3E /* CovertOps-prefix.pch */,
+				EF970174D9D5E05720508924985E7E04 /* CovertOps-umbrella.h */,
 			);
 			name = "Support Files";
-			path = "Example/Pods/Target Support Files/OperationKit";
+			path = "Example/Pods/Target Support Files/CovertOps";
 			sourceTree = "<group>";
 		};
 		4F664ED449A72276EDACE40341659F8B /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				C9F74489CD22C8AC930B3941898E4A95 /* Pods-OperationKit_Example */,
-				0A6DFE559C5D8CAFE19C9F8F2BC07E0C /* Pods-OperationKit_Tests */,
+				C9F74489CD22C8AC930B3941898E4A95 /* Pods-CovertOps_Example */,
+				0A6DFE559C5D8CAFE19C9F8F2BC07E0C /* Pods-CovertOps_Tests */,
 			);
 			name = "Targets Support Files";
 			sourceTree = "<group>";
@@ -170,7 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				DF1D86ADE465B7473EE6433BB6DDC0BF /* LICENSE */,
-				52D29A02480126DA62A1391DDD0F389B /* OperationKit.podspec */,
+				52D29A02480126DA62A1391DDD0F389B /* CovertOps.podspec */,
 				C6B27EF87D6E18C12D6083350C1E3551 /* README.md */,
 			);
 			name = Pod;
@@ -198,7 +198,7 @@
 		97BE70C0E795652137F9C6CD617631C9 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				295EDCA9035D1AC6DDC6985A962F73FB /* OperationKit */,
+				295EDCA9035D1AC6DDC6985A962F73FB /* CovertOps */,
 			);
 			name = "Development Pods";
 			sourceTree = "<group>";
@@ -206,9 +206,9 @@
 		BAEF14550F0A9A1E4ECFECA46D2C13CC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				495C20A76977C93535296CF8F3FC0A09 /* OperationKit.framework */,
-				B6E349481C42E09A20049270F18E34A6 /* Pods_OperationKit_Example.framework */,
-				0475A31F316B327C227A8F13D422704B /* Pods_OperationKit_Tests.framework */,
+				495C20A76977C93535296CF8F3FC0A09 /* CovertOps.framework */,
+				B6E349481C42E09A20049270F18E34A6 /* Pods_CovertOps_Example.framework */,
+				0475A31F316B327C227A8F13D422704B /* Pods_CovertOps_Tests.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -221,22 +221,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		C9F74489CD22C8AC930B3941898E4A95 /* Pods-OperationKit_Example */ = {
+		C9F74489CD22C8AC930B3941898E4A95 /* Pods-CovertOps_Example */ = {
 			isa = PBXGroup;
 			children = (
 				6B59A76339BBB5472A722BE7FE8515F7 /* Info.plist */,
-				404B71221870D9CDA8417FA3B62EF416 /* Pods-OperationKit_Example.modulemap */,
-				56B25F67AAD11E04290247DD6338B427 /* Pods-OperationKit_Example-acknowledgements.markdown */,
-				04480728D5EDC0A637C8FDD3807EF214 /* Pods-OperationKit_Example-acknowledgements.plist */,
-				F2D89655B23AFDF8BBCCD5BC9520C321 /* Pods-OperationKit_Example-dummy.m */,
-				68C8357232A3C3459E060A6D80852311 /* Pods-OperationKit_Example-frameworks.sh */,
-				908A599CBC65F00868E7AEA51E3834B9 /* Pods-OperationKit_Example-resources.sh */,
-				8D4E90254C3DC07263A500A8D9166744 /* Pods-OperationKit_Example-umbrella.h */,
-				4EBF58D127DC7FB9B2BC955A8D9DE145 /* Pods-OperationKit_Example.debug.xcconfig */,
-				3C86C1BF7F0C68148B6C03208A14B6AB /* Pods-OperationKit_Example.release.xcconfig */,
+				404B71221870D9CDA8417FA3B62EF416 /* Pods-CovertOps_Example.modulemap */,
+				56B25F67AAD11E04290247DD6338B427 /* Pods-CovertOps_Example-acknowledgements.markdown */,
+				04480728D5EDC0A637C8FDD3807EF214 /* Pods-CovertOps_Example-acknowledgements.plist */,
+				F2D89655B23AFDF8BBCCD5BC9520C321 /* Pods-CovertOps_Example-dummy.m */,
+				68C8357232A3C3459E060A6D80852311 /* Pods-CovertOps_Example-frameworks.sh */,
+				908A599CBC65F00868E7AEA51E3834B9 /* Pods-CovertOps_Example-resources.sh */,
+				8D4E90254C3DC07263A500A8D9166744 /* Pods-CovertOps_Example-umbrella.h */,
+				4EBF58D127DC7FB9B2BC955A8D9DE145 /* Pods-CovertOps_Example.debug.xcconfig */,
+				3C86C1BF7F0C68148B6C03208A14B6AB /* Pods-CovertOps_Example.release.xcconfig */,
 			);
-			name = "Pods-OperationKit_Example";
-			path = "Target Support Files/Pods-OperationKit_Example";
+			name = "Pods-CovertOps_Example";
+			path = "Target Support Files/Pods-CovertOps_Example";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,7 +246,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C7F9A20EDA800FA800DFB53F0EF9C27B /* Pods-OperationKit_Tests-umbrella.h in Headers */,
+				C7F9A20EDA800FA800DFB53F0EF9C27B /* Pods-CovertOps_Tests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,7 +254,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7C3F5E87B9A7AB4E6E89E63973DE2AA5 /* Pods-OperationKit_Example-umbrella.h in Headers */,
+				7C3F5E87B9A7AB4E6E89E63973DE2AA5 /* Pods-CovertOps_Example-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,16 +262,16 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4EABDCC5A40837CC720073954201B1C1 /* OperationKit-umbrella.h in Headers */,
+				4EABDCC5A40837CC720073954201B1C1 /* CovertOps-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		965A066F3002F6D3F55035E9EAA06331 /* OperationKit */ = {
+		965A066F3002F6D3F55035E9EAA06331 /* CovertOps */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5F3CCD951AFB8BDC7CCFC2B9E0E3F0D3 /* Build configuration list for PBXNativeTarget "OperationKit" */;
+			buildConfigurationList = 5F3CCD951AFB8BDC7CCFC2B9E0E3F0D3 /* Build configuration list for PBXNativeTarget "CovertOps" */;
 			buildPhases = (
 				F6967C2B6F26B9635409C0695E083065 /* Headers */,
 				E4A040F5AC8CA443417B7016D4A2E9CA /* Sources */,
@@ -282,14 +282,14 @@
 			);
 			dependencies = (
 			);
-			name = OperationKit;
-			productName = OperationKit;
-			productReference = 495C20A76977C93535296CF8F3FC0A09 /* OperationKit.framework */;
+			name = CovertOps;
+			productName = CovertOps;
+			productReference = 495C20A76977C93535296CF8F3FC0A09 /* CovertOps.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		973905BC8412DB77C9E23C1AF65F19C1 /* Pods-OperationKit_Tests */ = {
+		973905BC8412DB77C9E23C1AF65F19C1 /* Pods-CovertOps_Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F69A53FCE4E3262592C48911F75C8742 /* Build configuration list for PBXNativeTarget "Pods-OperationKit_Tests" */;
+			buildConfigurationList = F69A53FCE4E3262592C48911F75C8742 /* Build configuration list for PBXNativeTarget "Pods-CovertOps_Tests" */;
 			buildPhases = (
 				35F581C38F6A241676D96C02C3B65FCE /* Headers */,
 				2619068DB830CFB5CA2606C5132A72F8 /* Sources */,
@@ -301,14 +301,14 @@
 			dependencies = (
 				7A221C06245E1298D81133C2C2A528F0 /* PBXTargetDependency */,
 			);
-			name = "Pods-OperationKit_Tests";
-			productName = "Pods-OperationKit_Tests";
-			productReference = 0475A31F316B327C227A8F13D422704B /* Pods_OperationKit_Tests.framework */;
+			name = "Pods-CovertOps_Tests";
+			productName = "Pods-CovertOps_Tests";
+			productReference = 0475A31F316B327C227A8F13D422704B /* Pods_CovertOps_Tests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		E9A4BFA0AA466B76F7BBF1745131F69F /* Pods-OperationKit_Example */ = {
+		E9A4BFA0AA466B76F7BBF1745131F69F /* Pods-CovertOps_Example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2BE4D364384516149944E62624EF1943 /* Build configuration list for PBXNativeTarget "Pods-OperationKit_Example" */;
+			buildConfigurationList = 2BE4D364384516149944E62624EF1943 /* Build configuration list for PBXNativeTarget "Pods-CovertOps_Example" */;
 			buildPhases = (
 				A33BCDCDDB97C22ABCE8BA399FC1194F /* Headers */,
 				D6CEC13E233ABF84DBEB36FADCE526D5 /* Sources */,
@@ -320,9 +320,9 @@
 			dependencies = (
 				C716E174103B2CE499FBA7EAF1A9BC61 /* PBXTargetDependency */,
 			);
-			name = "Pods-OperationKit_Example";
-			productName = "Pods-OperationKit_Example";
-			productReference = B6E349481C42E09A20049270F18E34A6 /* Pods_OperationKit_Example.framework */;
+			name = "Pods-CovertOps_Example";
+			productName = "Pods-CovertOps_Example";
+			productReference = B6E349481C42E09A20049270F18E34A6 /* Pods_CovertOps_Example.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -351,9 +351,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				965A066F3002F6D3F55035E9EAA06331 /* OperationKit */,
-				E9A4BFA0AA466B76F7BBF1745131F69F /* Pods-OperationKit_Example */,
-				973905BC8412DB77C9E23C1AF65F19C1 /* Pods-OperationKit_Tests */,
+				965A066F3002F6D3F55035E9EAA06331 /* CovertOps */,
+				E9A4BFA0AA466B76F7BBF1745131F69F /* Pods-CovertOps_Example */,
+				973905BC8412DB77C9E23C1AF65F19C1 /* Pods-CovertOps_Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -387,7 +387,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D387590BEAE8E8D507008454F679A643 /* Pods-OperationKit_Tests-dummy.m in Sources */,
+				D387590BEAE8E8D507008454F679A643 /* Pods-CovertOps_Tests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,7 +395,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65189A027F2A4A201C624DBAD17FFBC6 /* Pods-OperationKit_Example-dummy.m in Sources */,
+				65189A027F2A4A201C624DBAD17FFBC6 /* Pods-CovertOps_Example-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,7 +403,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				73A6D840D7642C73A453E82580905F4F /* OperationKit-dummy.m in Sources */,
+				73A6D840D7642C73A453E82580905F4F /* CovertOps-dummy.m in Sources */,
 				78F846F32170A06200AE0648 /* OperationQueue+.swift in Sources */,
 				EEF0A4970E776FCDC48AAC7728A7AA15 /* QueuableOperation.swift in Sources */,
 				78F846EF21709FF700AE0648 /* AsyncOperation.swift in Sources */,
@@ -417,14 +417,14 @@
 /* Begin PBXTargetDependency section */
 		7A221C06245E1298D81133C2C2A528F0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = "Pods-OperationKit_Example";
-			target = E9A4BFA0AA466B76F7BBF1745131F69F /* Pods-OperationKit_Example */;
+			name = "Pods-CovertOps_Example";
+			target = E9A4BFA0AA466B76F7BBF1745131F69F /* Pods-CovertOps_Example */;
 			targetProxy = D3590A6972F89F205183D88850DA1331 /* PBXContainerItemProxy */;
 		};
 		C716E174103B2CE499FBA7EAF1A9BC61 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = OperationKit;
-			target = 965A066F3002F6D3F55035E9EAA06331 /* OperationKit */;
+			name = CovertOps;
+			target = 965A066F3002F6D3F55035E9EAA06331 /* CovertOps */;
 			targetProxy = 3EA41F5725D4FD4D2AF2961A3F14118A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -432,7 +432,7 @@
 /* Begin XCBuildConfiguration section */
 		17D8333D8F09B95847E5AF8748A5E6E1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 46B2341247E0E32FB227EBA188C823A5 /* Pods-OperationKit_Tests.debug.xcconfig */;
+			baseConfigurationReference = 46B2341247E0E32FB227EBA188C823A5 /* Pods-CovertOps_Tests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -444,12 +444,12 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-OperationKit_Tests/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-CovertOps_Tests/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-OperationKit_Tests/Pods-OperationKit_Tests.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-CovertOps_Tests/Pods-CovertOps_Tests.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -465,7 +465,7 @@
 		};
 		1BBE74844ACEA418556FA8D208C153D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C515D3D4A3EDCFA49B8F42311324D954 /* OperationKit.xcconfig */;
+			baseConfigurationReference = C515D3D4A3EDCFA49B8F42311324D954 /* CovertOps.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -476,14 +476,14 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/OperationKit/OperationKit-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/OperationKit/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/CovertOps/CovertOps-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CovertOps/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/OperationKit/OperationKit.modulemap";
-				PRODUCT_MODULE_NAME = OperationKit;
-				PRODUCT_NAME = OperationKit;
+				MODULEMAP_FILE = "Target Support Files/CovertOps/CovertOps.modulemap";
+				PRODUCT_MODULE_NAME = CovertOps;
+				PRODUCT_NAME = CovertOps;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
@@ -497,7 +497,7 @@
 		};
 		41082142AEFFC6C3180A55919E789BDB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C515D3D4A3EDCFA49B8F42311324D954 /* OperationKit.xcconfig */;
+			baseConfigurationReference = C515D3D4A3EDCFA49B8F42311324D954 /* CovertOps.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -508,14 +508,14 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/OperationKit/OperationKit-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/OperationKit/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/CovertOps/CovertOps-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CovertOps/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/OperationKit/OperationKit.modulemap";
-				PRODUCT_MODULE_NAME = OperationKit;
-				PRODUCT_NAME = OperationKit;
+				MODULEMAP_FILE = "Target Support Files/CovertOps/CovertOps.modulemap";
+				PRODUCT_MODULE_NAME = CovertOps;
+				PRODUCT_NAME = CovertOps;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
@@ -530,7 +530,7 @@
 		};
 		4B31C13C48EA27AA706F8376C71B3942 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4EBF58D127DC7FB9B2BC955A8D9DE145 /* Pods-OperationKit_Example.debug.xcconfig */;
+			baseConfigurationReference = 4EBF58D127DC7FB9B2BC955A8D9DE145 /* Pods-CovertOps_Example.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -542,12 +542,12 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-OperationKit_Example/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-CovertOps_Example/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-OperationKit_Example/Pods-OperationKit_Example.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-CovertOps_Example/Pods-CovertOps_Example.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -625,7 +625,7 @@
 		};
 		AF61BD08F138AF0C15458D3BDA1D0534 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3C86C1BF7F0C68148B6C03208A14B6AB /* Pods-OperationKit_Example.release.xcconfig */;
+			baseConfigurationReference = 3C86C1BF7F0C68148B6C03208A14B6AB /* Pods-CovertOps_Example.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -637,12 +637,12 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-OperationKit_Example/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-CovertOps_Example/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-OperationKit_Example/Pods-OperationKit_Example.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-CovertOps_Example/Pods-CovertOps_Example.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -660,7 +660,7 @@
 		};
 		BB9535E000BB4E15A298DD69F5C1B358 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C41EC4886D83C1168540C2EE8A02C6D8 /* Pods-OperationKit_Tests.release.xcconfig */;
+			baseConfigurationReference = C41EC4886D83C1168540C2EE8A02C6D8 /* Pods-CovertOps_Tests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -672,12 +672,12 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-OperationKit_Tests/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-CovertOps_Tests/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-OperationKit_Tests/Pods-OperationKit_Tests.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-CovertOps_Tests/Pods-CovertOps_Tests.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -759,7 +759,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2BE4D364384516149944E62624EF1943 /* Build configuration list for PBXNativeTarget "Pods-OperationKit_Example" */ = {
+		2BE4D364384516149944E62624EF1943 /* Build configuration list for PBXNativeTarget "Pods-CovertOps_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4B31C13C48EA27AA706F8376C71B3942 /* Debug */,
@@ -777,7 +777,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5F3CCD951AFB8BDC7CCFC2B9E0E3F0D3 /* Build configuration list for PBXNativeTarget "OperationKit" */ = {
+		5F3CCD951AFB8BDC7CCFC2B9E0E3F0D3 /* Build configuration list for PBXNativeTarget "CovertOps" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1BBE74844ACEA418556FA8D208C153D2 /* Debug */,
@@ -786,7 +786,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F69A53FCE4E3262592C48911F75C8742 /* Build configuration list for PBXNativeTarget "Pods-OperationKit_Tests" */ = {
+		F69A53FCE4E3262592C48911F75C8742 /* Build configuration list for PBXNativeTarget "Pods-CovertOps_Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				17D8333D8F09B95847E5AF8748A5E6E1 /* Debug */,

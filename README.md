@@ -1,9 +1,9 @@
-# OperationKit
+# CovertOps
 
-[![CI Status](https://img.shields.io/travis/patricklynch/OperationKit.svg?style=flat)](https://travis-ci.org/patricklynch/OperationKit)
-[![Version](https://img.shields.io/cocoapods/v/OperationKit.svg?style=flat)](https://cocoapods.org/pods/OperationKit)
-[![License](https://img.shields.io/cocoapods/l/OperationKit.svg?style=flat)](https://cocoapods.org/pods/OperationKit)
-[![Platform](https://img.shields.io/cocoapods/p/OperationKit.svg?style=flat)](https://cocoapods.org/pods/OperationKit)
+[![CI Status](https://img.shields.io/travis/patricklynch/CovertOps.svg?style=flat)](https://travis-ci.org/patricklynch/CovertOps)
+[![Version](https://img.shields.io/cocoapods/v/CovertOps.svg?style=flat)](https://cocoapods.org/pods/CovertOps)
+[![License](https://img.shields.io/cocoapods/l/CovertOps.svg?style=flat)](https://cocoapods.org/pods/CovertOps)
+[![Platform](https://img.shields.io/cocoapods/p/CovertOps.svg?style=flat)](https://cocoapods.org/pods/CovertOps)
 
 ## Example
 
@@ -13,11 +13,11 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Installation
 
-OperationKit is available through [CocoaPods](https://cocoapods.org). To install
+CovertOps is available through [CocoaPods](https://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'OperationKit'
+pod 'CovertOps'
 ```
 
 ## Author
@@ -26,4 +26,4 @@ patricklynch, pdlynch@gmail.com
 
 ## License
 
-OperationKit is available under the MIT license. See the LICENSE file for more info.
+CovertOps is available under the MIT license. See the LICENSE file for more info.

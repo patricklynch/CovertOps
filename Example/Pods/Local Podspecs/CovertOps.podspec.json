@@ -1,0 +1,22 @@
+{
+  "name": "CovertOps",
+  "version": "0.1.0",
+  "summary": "A short description of CovertOps.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/patricklynch/CovertOps",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "patricklynch": "pdlynch@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/patricklynch/CovertOps.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "CovertOps/Classes/**/*"
+}

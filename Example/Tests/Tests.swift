@@ -1,5 +1,5 @@
 import XCTest
-import OperationKit
+import CovertOps
 
 class Tests: XCTestCase {
     
