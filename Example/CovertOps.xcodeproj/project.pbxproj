@@ -15,6 +15,10 @@
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		78C8B7E0217A3186007F502D /* ObservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C8B7DF217A3186007F502D /* ObservationViewController.swift */; };
+		78C8B7E2217A380F007F502D /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C8B7E1217A380F007F502D /* Todo.swift */; };
+		78C8B7E4217A381E007F502D /* ShowActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C8B7E3217A381E007F502D /* ShowActivityIndicator.swift */; };
+		78C8B7E6217A3936007F502D /* DemoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C8B7E5217A3936007F502D /* DemoCell.swift */; };
+		78C8B7E8217A39C1007F502D /* Demo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C8B7E7217A39C1007F502D /* Demo.swift */; };
 		78F847312171E05800AE0648 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F847302171E05800AE0648 /* DetailViewController.swift */; };
 		78F847332171E11000AE0648 /* ShowDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F847322171E11000AE0648 /* ShowDetail.swift */; };
 		78F847352171E63600AE0648 /* ShowAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F847342171E63600AE0648 /* ShowAlert.swift */; };
@@ -48,6 +52,10 @@
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		78C8B7DF217A3186007F502D /* ObservationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservationViewController.swift; sourceTree = "<group>"; };
+		78C8B7E1217A380F007F502D /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
+		78C8B7E3217A381E007F502D /* ShowActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowActivityIndicator.swift; sourceTree = "<group>"; };
+		78C8B7E5217A3936007F502D /* DemoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoCell.swift; sourceTree = "<group>"; };
+		78C8B7E7217A39C1007F502D /* Demo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Demo.swift; sourceTree = "<group>"; };
 		78F847302171E05800AE0648 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		78F847322171E11000AE0648 /* ShowDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetail.swift; sourceTree = "<group>"; };
 		78F847342171E63600AE0648 /* ShowAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowAlert.swift; sourceTree = "<group>"; };
@@ -115,16 +123,20 @@
 			isa = PBXGroup;
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
+				78C8B7E7217A39C1007F502D /* Demo.swift */,
+				78C8B7E5217A3936007F502D /* DemoCell.swift */,
 				607FACD71AFB9204008FA782 /* DemoViewController.swift */,
-				78C8B7DF217A3186007F502D /* ObservationViewController.swift */,
-				78F847322171E11000AE0648 /* ShowDetail.swift */,
-				78F847342171E63600AE0648 /* ShowAlert.swift */,
 				78F847302171E05800AE0648 /* DetailViewController.swift */,
 				78F847362171E8FA00AE0648 /* DownloadData.swift */,
-				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
+				607FACD91AFB9204008FA782 /* Main.storyboard */,
+				78C8B7DF217A3186007F502D /* ObservationViewController.swift */,
+				78C8B7E3217A381E007F502D /* ShowActivityIndicator.swift */,
+				78F847342171E63600AE0648 /* ShowAlert.swift */,
+				78F847322171E11000AE0648 /* ShowDetail.swift */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
+				78C8B7E1217A380F007F502D /* Todo.swift */,
 			);
 			name = "Example for CovertOps";
 			path = CovertOps;
@@ -352,6 +364,10 @@
 				78C8B7E0217A3186007F502D /* ObservationViewController.swift in Sources */,
 				78F847352171E63600AE0648 /* ShowAlert.swift in Sources */,
 				78F847312171E05800AE0648 /* DetailViewController.swift in Sources */,
+				78C8B7E6217A3936007F502D /* DemoCell.swift in Sources */,
+				78C8B7E8217A39C1007F502D /* Demo.swift in Sources */,
+				78C8B7E2217A380F007F502D /* Todo.swift in Sources */,
+				78C8B7E4217A381E007F502D /* ShowActivityIndicator.swift in Sources */,
 				607FACD81AFB9204008FA782 /* DemoViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 				78F847332171E11000AE0648 /* ShowDetail.swift in Sources */,

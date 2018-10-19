@@ -26,17 +26,6 @@ class ObservationViewController: UIViewController {
     
     @IBOutlet private weak var label: UILabel!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        navigationItem.rightBarButtonItem = UIBarButtonItem(
-            title: "Done",
-            style: .plain,
-            target: self,
-            action: #selector(onDone)
-        )
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
      
@@ -55,10 +44,6 @@ class ObservationViewController: UIViewController {
         super.viewWillDisappear(animated)
         
         observer?.cancel()
-    }
-    
-    @objc private func onDone() {
-        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func reloadTodo() {

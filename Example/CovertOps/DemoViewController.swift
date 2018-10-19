@@ -1,23 +1,6 @@
 import UIKit
 import CovertOps
 
-enum Demo: CaseIterable {
-    case showDetail, showMultipleAlerts, downloadConcurrentData, observation
-    
-    var title: String {
-        switch self {
-        case .showDetail:
-            return "Show Detail"
-        case .showMultipleAlerts:
-            return "Show Multiple Alerts"
-        case .downloadConcurrentData:
-            return "Download Concurrent Data"
-        case .observation:
-            return "Observation"
-        }
-    }
-}
-
 class DemoViewController: UIViewController, UITableViewDelegate {
     
     @IBOutlet private weak var tableView: UITableView!
@@ -75,7 +58,7 @@ class DemoViewController: UIViewController, UITableViewDelegate {
             guard let viewController = storyboard.instantiateViewController(withIdentifier: "ObservationViewController") as? ObservationViewController else {
                 return
             }
-            navigationController?.present(viewController, animated: true, completion: nil)
+            navigationController?.pushViewController(viewController, animated: true)
         }
         
         tableView.deselectRow(at: indexPath, animated: true)
@@ -93,9 +76,9 @@ class DemoDataSource: NSObject, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "demoCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "DemoCell", for: indexPath) as! DemoCell
         let demo = demos[indexPath.row]
-        cell.textLabel?.text = demo.title
+        cell.viewData = demo.demoDescription
         return cell
     }
 }

@@ -14,7 +14,7 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        label.text = demo?.title
+        label.text = demo?.demoDescription.title
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(
             title: "Done",
