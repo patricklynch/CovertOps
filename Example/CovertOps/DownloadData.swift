@@ -1,17 +1,50 @@
 import Foundation
 import CovertOps
 
-struct Todo {
+class Todo: Codable, Hashable, Comparable {
+    static func < (lhs: Todo, rhs: Todo) -> Bool {
+        return lhs.dateUpdated > rhs.dateUpdated
+    }
     
+    static func == (lhs: Todo, rhs: Todo) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
+    let id: Int
+    let title: String
+    var completed: Bool {
+        didSet {
+            dateUpdated = Date()
+        }
+    }
+    private(set) var dateUpdated = Date()
+    let userId: Int?
+    
+    init(title: String) {
+        self.title = title
+        id = (100..<100000).randomElement() ?? 0
+        completed = false
+        userId = nil
+    }
+    
+    private enum CodingKeys: String, CodingKey {
+        case id, title, completed, userId
+    }
+    
+    var hashValue: Int {
+        return id.hashValue
+    }
 }
 
 class ShowActivityIndicator: AsyncMainOperation<Void> {
     
     private weak var parentView: UIView?
     private var activityIndcatorView: UIView?
+    private let animationDuration: TimeInterval
     
-    init(in parentView: UIView) {
+    init(in parentView: UIView, animationDuration: TimeInterval = 0.25) {
         self.parentView = parentView
+        self.animationDuration = animationDuration
     }
     
     override func execute() {
@@ -27,7 +60,7 @@ class ShowActivityIndicator: AsyncMainOperation<Void> {
         parentView.addSubview(activityIndcatorView)
         
         activityIndcatorView.alpha = 0.0
-        UIView.animate(withDuration: 0.5) {
+        UIView.animate(withDuration: animationDuration) {
             activityIndcatorView.alpha = 1.0
         }
         
@@ -36,7 +69,7 @@ class ShowActivityIndicator: AsyncMainOperation<Void> {
     
     override func cancel() {
         UIView.animate(
-            withDuration: 0.5,
+            withDuration: animationDuration,
             animations: {
                 self.activityIndcatorView?.alpha = 0.0
             },
@@ -48,7 +81,12 @@ class ShowActivityIndicator: AsyncMainOperation<Void> {
     }
 }
 
-class DownloadData: AsyncOperation<Todo> {
+enum Result<T> {
+    case success(data: T)
+    case error(Error)
+}
+
+class DownloadData: AsyncOperation<Result<Todo>> {
     
     let id: Int
     
@@ -60,13 +98,14 @@ class DownloadData: AsyncOperation<Todo> {
         let url = URL(string: "https://jsonplaceholder.typicode.com/todos/\(id)")!
         let urlRequest = URLRequest(url: url)
         let task = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
-            guard error == nil else {
-                self.cancel()
-                return
+            let decoder = JSONDecoder()
+            if let error = error {
+                self.finish(output: .error(error))
+                
+            } else if let data = data,
+                let todo = try? decoder.decode(Todo.self, from: data) {
+                self.finish(output: .success(data: todo))
             }
-            
-            print(data)
-            self.finish()
         }
         task.resume()
     }

@@ -1,18 +1,15 @@
 import Foundation
 
-private var _debugObserverCount = 0
-
-/// An operation that uses a repeating interval so observe changes in a value,
-/// thereby creating an active binding.
+/// An operation that uses a repeating interval so observe changes in a value.
 public final class Observe<T: Equatable>: QueueableOperation<Void> {
     
-    private var update: ((T, T)->())!
+    private var update: ((Observe<T>, T)->())!
     private let read: (()->T)
     private var shouldStop: (()->Bool)?
     
-    private var currentValue: T
+    private var currentValue: T?
     private let interval: TimeInterval?
-    let minInterval: TimeInterval = 0.1
+    let minInterval: TimeInterval = 0.02
     
     /// - Parameters:
     ///   - interval: rate at which to check for changes in output of `read`
@@ -21,7 +18,6 @@ public final class Observe<T: Equatable>: QueueableOperation<Void> {
     public init(interval: TimeInterval? = nil, _ read: @autoclosure @escaping ()->T) {
         self.read = read
         self.interval = interval
-        self.currentValue = read()
     }
     
     /// Allows callers to create a condition for when observation should cease and
@@ -38,27 +34,19 @@ public final class Observe<T: Equatable>: QueueableOperation<Void> {
     
     /// Begins observation.
     ///
-    /// - Parameter update: Called on every interval, returns the value to be
-    ///   observed for changes.
+    /// - Parameter update: Called on every interval, returns the value being observed for changes.
     /// - Returns: itself, for functional-style chaining.
     @discardableResult
-    public func start(update: @escaping (T, T)->()) -> Observe<T> {
+    public func start(update: @escaping (Observe<T>, T)->()) -> Observe<T> {
         self.update = update
         super.queue()
-        onInterval()
-        _debugObserverCount += 1
         return self
     }
     
-    /// Ceases observation and removes the operation the queue
-    /// to be released thereafter unless retained elsewhere.
-    func stop() {
+    /// Ceases observation and removes the operation from the queue,
+    /// thereafter to be released unless retained elsewhere.
+    public func stop() {
         cancel()
-    }
-    
-    override public func cancel() {
-        super.cancel()
-        _debugObserverCount -= 1
     }
     
     override public func main() {
@@ -67,17 +55,31 @@ public final class Observe<T: Equatable>: QueueableOperation<Void> {
         while shouldStop?() != true && !isCancelled && !isFinished {
             let interval = max(self.interval ?? minInterval, minInterval)
             Thread.sleep(forTimeInterval: interval)
-            DispatchQueue.main.async {
-                self.onInterval()
+            DispatchQueue.main.async { [weak self] in
+                self?.onInterval()
             }
         }
     }
     
-    private func onInterval() {
-        let lastValue = currentValue
+    /// Forces a call to the `update` closure provided when calling `start`.  This is particularly
+    /// useful to ensure that the observer's `update` method is called at least once, such as
+    /// immeidately after creating and starting an `Observe`.
+    @discardableResult
+    public func trigger() -> Observe<T> {
+        DispatchQueue.main.async { [weak self] in
+            self?.onInterval(force: true)
+        }
+        return self
+    }
+    
+    private func onInterval(force: Bool = false) {
+        guard !isCancelled && !isFinished else { return }
         let nextValue = read()
-        if lastValue != nextValue {
-            update(nextValue, lastValue)
+        if force {
+            update(self, nextValue)
+            
+        } else if let lastValue = currentValue, lastValue != nextValue {
+            update(self, nextValue)
         }
         currentValue = nextValue
     }

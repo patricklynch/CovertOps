@@ -22,7 +22,7 @@ class ObserveTests: XCTestCase {
     func testChangingValue() {
         let expectation = XCTestExpectation(description: "")
         
-        let observer = Observe(self.property).start { value, _ in
+        let observer = Observe(self.property).start { _, value in
             XCTAssertEqual(value, self.expectedValue)
             self.updateCount += 1
         }
@@ -72,7 +72,7 @@ class ObserveTests: XCTestCase {
         let expectation = XCTestExpectation(description: "")
         
         property = false
-        let observer = Observe(self.property).until(self.shouldEnd).start { value, _ in
+        let observer = Observe(self.property).until(self.shouldEnd).start { _, value in
             XCTAssertEqual(value, self.expectedValue)
             self.updateCount += 1
         }

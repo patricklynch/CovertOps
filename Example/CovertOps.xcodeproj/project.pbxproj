@@ -14,6 +14,7 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		78C8B7E0217A3186007F502D /* ObservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C8B7DF217A3186007F502D /* ObservationViewController.swift */; };
 		78F847312171E05800AE0648 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F847302171E05800AE0648 /* DetailViewController.swift */; };
 		78F847332171E11000AE0648 /* ShowDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F847322171E11000AE0648 /* ShowDetail.swift */; };
 		78F847352171E63600AE0648 /* ShowAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F847342171E63600AE0648 /* ShowAlert.swift */; };
@@ -46,6 +47,7 @@
 		607FACE51AFB9204008FA782 /* CovertOps_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CovertOps_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
+		78C8B7DF217A3186007F502D /* ObservationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservationViewController.swift; sourceTree = "<group>"; };
 		78F847302171E05800AE0648 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		78F847322171E11000AE0648 /* ShowDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetail.swift; sourceTree = "<group>"; };
 		78F847342171E63600AE0648 /* ShowAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowAlert.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* DemoViewController.swift */,
+				78C8B7DF217A3186007F502D /* ObservationViewController.swift */,
 				78F847322171E11000AE0648 /* ShowDetail.swift */,
 				78F847342171E63600AE0648 /* ShowAlert.swift */,
 				78F847302171E05800AE0648 /* DetailViewController.swift */,
@@ -346,6 +349,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78C8B7E0217A3186007F502D /* ObservationViewController.swift in Sources */,
 				78F847352171E63600AE0648 /* ShowAlert.swift in Sources */,
 				78F847312171E05800AE0648 /* DetailViewController.swift in Sources */,
 				607FACD81AFB9204008FA782 /* DemoViewController.swift in Sources */,

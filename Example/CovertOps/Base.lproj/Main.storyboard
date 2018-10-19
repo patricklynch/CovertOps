@@ -71,8 +71,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DqA-IG-GMs">
-                                <rect key="frame" x="47" y="50" width="280" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Detail Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DqA-IG-GMs">
+                                <rect key="frame" x="47" y="50" width="280" height="27.5"/>
                                 <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -83,7 +83,7 @@
                             <constraint firstAttribute="trailing" secondItem="DqA-IG-GMs" secondAttribute="trailing" constant="48" id="1JX-Ak-F2Q"/>
                             <constraint firstItem="DqA-IG-GMs" firstAttribute="leading" secondItem="uPt-hZ-i7b" secondAttribute="leading" constant="47" id="dMG-vF-by3"/>
                             <constraint firstItem="DqA-IG-GMs" firstAttribute="top" secondItem="k8c-rz-J2c" secondAttribute="bottom" constant="30" id="q0P-aC-DIO"/>
-                            <constraint firstItem="lzG-4e-mmO" firstAttribute="top" secondItem="DqA-IG-GMs" secondAttribute="bottom" constant="596.5" id="qmj-40-lsm"/>
+                            <constraint firstItem="lzG-4e-mmO" firstAttribute="top" relation="greaterThanOrEqual" secondItem="DqA-IG-GMs" secondAttribute="bottom" constant="20" id="qmj-40-lsm"/>
                         </constraints>
                     </view>
                     <connections>
@@ -109,6 +109,61 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2mr-q9-bQX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-79" y="27"/>
+        </scene>
+        <!--Observation View Controller-->
+        <scene sceneID="8HT-ZW-qtA">
+            <objects>
+                <viewController storyboardIdentifier="ObservationViewController" id="INb-zv-oiw" customClass="ObservationViewController" customModule="CovertOps_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="U2P-X4-n64"/>
+                        <viewControllerLayoutGuide type="bottom" id="Swo-jk-w3Z"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kwV-TP-ihe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Observed Data" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CFx-9f-eff">
+                                <rect key="frame" x="47" y="50" width="280" height="27.5"/>
+                                <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="d70-Vs-KLb">
+                                <rect key="frame" x="10" y="602" width="355" height="55"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OZe-hq-YFC">
+                                        <rect key="frame" x="0.0" y="0.0" width="355" height="55"/>
+                                        <color key="backgroundColor" red="0.08235294118" green="0.4941176471" blue="0.98431372549999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="JBD-gK-sau"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <state key="normal" title="Reload"/>
+                                        <connections>
+                                            <action selector="reloadTodo" destination="INb-zv-oiw" eventType="touchUpInside" id="f4O-Fw-dku"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Swo-jk-w3Z" firstAttribute="top" secondItem="d70-Vs-KLb" secondAttribute="bottom" constant="10" id="DIB-Vx-EoA"/>
+                            <constraint firstItem="CFx-9f-eff" firstAttribute="leading" secondItem="kwV-TP-ihe" secondAttribute="leading" constant="47" id="K4b-Ne-zWK"/>
+                            <constraint firstAttribute="trailing" secondItem="d70-Vs-KLb" secondAttribute="trailing" constant="10" id="QP1-A9-TCp"/>
+                            <constraint firstAttribute="trailing" secondItem="CFx-9f-eff" secondAttribute="trailing" constant="48" id="kel-o0-RXM"/>
+                            <constraint firstItem="Swo-jk-w3Z" firstAttribute="top" relation="greaterThanOrEqual" secondItem="CFx-9f-eff" secondAttribute="bottom" constant="20" id="mOH-hq-A0H"/>
+                            <constraint firstItem="CFx-9f-eff" firstAttribute="top" secondItem="U2P-X4-n64" secondAttribute="bottom" constant="30" id="mOt-33-2VR"/>
+                            <constraint firstItem="d70-Vs-KLb" firstAttribute="leading" secondItem="kwV-TP-ihe" secondAttribute="leading" constant="10" id="uKP-bH-Xk8"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="label" destination="CFx-9f-eff" id="zhV-sr-W0p"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t3v-Gt-Ijw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2076" y="27"/>
         </scene>
     </scenes>
 </document>

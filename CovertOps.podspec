@@ -10,6 +10,7 @@ Pod::Spec.new do |s|
   s.name             = 'CovertOps'
   s.version          = '0.1.2'
   s.summary          = 'A robust application framework built upon Operation and OperationQueue.'
+  s.framework        = 'CoreData'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?

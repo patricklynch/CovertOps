@@ -2,7 +2,7 @@ import UIKit
 import CovertOps
 
 enum Demo: CaseIterable {
-    case showDetail, showMultipleAlerts, downloadConcurrentData
+    case showDetail, showMultipleAlerts, downloadConcurrentData, observation
     
     var title: String {
         switch self {
@@ -12,6 +12,8 @@ enum Demo: CaseIterable {
             return "Show Multiple Alerts"
         case .downloadConcurrentData:
             return "Download Concurrent Data"
+        case .observation:
+            return "Observation"
         }
     }
 }
@@ -55,10 +57,25 @@ class DemoViewController: UIViewController, UITableViewDelegate {
                 return DownloadData(id: integer)
             }
             operations.chained().queue() { operations in
-                let todos = operations.compactMap { $0 as? DownloadData }.compactMap { $0.output }
+                let todos: [Todo] = operations
+                    .compactMap { $0 as? DownloadData }
+                    .compactMap {
+                        if let result = $0.output,
+                            case let .success(data) = result {
+                            return data
+                        } else {
+                            return nil
+                        }
+                    }
                 print("Downloaded \(todos.count) todos.")
                 showLoading.cancel()
             }
+        case .observation:
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            guard let viewController = storyboard.instantiateViewController(withIdentifier: "ObservationViewController") as? ObservationViewController else {
+                return
+            }
+            navigationController?.present(viewController, animated: true, completion: nil)
         }
         
         tableView.deselectRow(at: indexPath, animated: true)
