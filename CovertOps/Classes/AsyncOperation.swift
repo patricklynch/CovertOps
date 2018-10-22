@@ -16,9 +16,12 @@ open class AsyncOperation<OutputType>: QueueableOperation<OutputType> {
         guard !isCancelled && !isFinished else {
             return
         }
+        operationWillStart()
         execute()
         wait()
     }
+    
+    open func operationWillStart() { }
     
     open func operationWillFinish(output: OutputType?) { }
     
@@ -49,6 +52,7 @@ open class AsyncMainOperation<OutputType>: AsyncOperation<OutputType> {
             return
         }
         DispatchQueue.main.async() {
+            self.operationWillStart()
             self.execute()
         }
         wait()
