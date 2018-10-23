@@ -3,7 +3,9 @@
 [![CI Status](https://img.shields.io/travis/patricklynch/CovertOps.svg?style=flat)](https://travis-ci.org/patricklynch/CovertOps)
 [![Version](https://img.shields.io/cocoapods/v/CovertOps.svg?style=flat)](https://cocoapods.org/pods/CovertOps)
 [![License](https://img.shields.io/cocoapods/l/CovertOps.svg?style=flat)](https://cocoapods.org/pods/CovertOps)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)]
 [![Platform](https://img.shields.io/cocoapods/p/CovertOps.svg?style=flat)](https://cocoapods.org/pods/CovertOps)
+[![Language](https://img.shields.io/badge/swift-4.2-orange.svg)](https://developer.apple.com/swift)
 
 `CovertOps` uses the `Operation` and `OperationQueue` classes from Apple's _Foundation_ framework to provide flexible, concise and easy control over robust application behaviors that are often difficult to achieve.  This includes precise timing, mutual exclusivity, observation, thread safety, sequencing, throttling, asynchronous behavior and dependency management.
 
