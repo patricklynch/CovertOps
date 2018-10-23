@@ -11,6 +11,8 @@
 
 Apple's operation classes are simple and powerful but were designed decades ago in Objective-C.  This framework adds many wrappers and convenience methods for a modern, functional-inspired Swift syntax that is much faster and easier to use.  There's also a handlful of utlity operations that solve common problems and some new features added to the behavior of operations that will make your own custom subclasses much more powerful.
 
+If you're interesting in using CoreData as well, check out [`CovertOpsData`](https://github.com/patricklynch/CovertOpsData), an extension of `CovertOps` that provides an easy, powerful and thread-safe implementation of a CoreData stack using operations to read and write from a persistent store.
+
 ## Resources
 For a better unstanding of operations and the principles upon which the framework are based, see below:
 - [Operation](https://developer.apple.com/documentation/foundation/operation) Apple Docs
