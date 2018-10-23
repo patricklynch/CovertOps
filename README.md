@@ -1,4 +1,4 @@
-# ![CovertOpsData Logo](logo-covertops.png)
+# ![CovertOps Logo](logo-covertops.png)
 
 [![CI Status](https://img.shields.io/travis/patricklynch/CovertOps.svg?style=flat)](https://travis-ci.org/patricklynch/CovertOps)
 [![Version](https://img.shields.io/cocoapods/v/CovertOps.svg?style=flat)](https://cocoapods.org/pods/CovertOps)
@@ -25,11 +25,11 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 To install using CocoaPods, add the following to your project Podfile:
 ```ruby
-pod 'CovertOpsData'
+pod 'CovertOps'
 ```
 To install using Carthage, add the following to your project Cartfile:
 ```ruby
-github "patricklynch/CovertOpsData"
+github "patricklynch/CovertOps"
 ```
 
 ## Author
