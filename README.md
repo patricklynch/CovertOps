@@ -25,11 +25,11 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 To install using CocoaPods, add the following to your project Podfile:
 ```ruby
-pod 'CovertOps'
+pod 'CovertOpsData'
 ```
 To install using Carthage, add the following to your project Cartfile:
 ```ruby
-github "patricklynch/CovertOps"
+github "patricklynch/CovertOpsData"
 ```
 
 ## Author
