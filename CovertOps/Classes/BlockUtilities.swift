@@ -1,5 +1,22 @@
 import Foundation
 
+public final class Async: AsyncOperation<Void> {
+    
+    let block: (Async) -> ()
+    
+    public init(block: @escaping (Async) -> ()) {
+        self.block = block
+    }
+    
+    override public func execute() {
+        block(self)
+    }
+    
+    func finish() {
+        super.finish(output: nil)
+    }
+}
+
 public final class AsyncMain: AsyncMainOperation<Void> {
     
     let block: (AsyncMain) -> ()
