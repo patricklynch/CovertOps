@@ -27,35 +27,35 @@ class ObserveTests: XCTestCase {
             self.updateCount += 1
         }
         let operations = [
-            Wait(interval: 0.1),
+            Wait(duration: 0.1),
             SyncMain { _ in
                 self.expectedUpdateCount += 1
                 self.expectedValue = true
                 self.property = true
             },
-            Wait(interval: 0.1),
+            Wait(duration: 0.1),
             SyncMain { _ in
                 self.expectedValue = true
                 self.property = true
             },
-            Wait(interval: 0.1),
+            Wait(duration: 0.1),
             SyncMain { _ in
                 self.expectedUpdateCount += 1
                 self.expectedValue = false
                 self.property = false
             },
-            Wait(interval: 0.1),
+            Wait(duration: 0.1),
             SyncMain { _ in
                 self.expectedValue = false
                 self.property = false
             },
-            Wait(interval: 0.1),
+            Wait(duration: 0.1),
             SyncMain { _ in
                 self.expectedUpdateCount += 1
                 self.expectedValue = true
                 self.property = true
             },
-            Wait(interval: 0.1)
+            Wait(duration: 0.1)
         ]
         operations.chained().queue() { _ in
             DispatchQueue.main.async {
@@ -77,17 +77,17 @@ class ObserveTests: XCTestCase {
             self.updateCount += 1
         }
         let operations = [
-            Wait(interval: 0.1),
+            Wait(duration: 0.1),
             SyncMain { _ in
                 self.expectedUpdateCount += 1
                 self.expectedValue = true
                 self.property = true
             },
-            Wait(interval: 0.1),
+            Wait(duration: 0.1),
             SyncMain { _ in
                 self.shouldEnd = true
             },
-            Wait(interval: 0.1),
+            Wait(duration: 0.1),
             SyncMain { _ in
                 self.expectedValue = false
                 self.property = false

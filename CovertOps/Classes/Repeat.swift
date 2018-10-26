@@ -33,8 +33,8 @@ public class Repeat: QueueableOperation<Void> {
     
     override public func main() {
         assert(!Thread.isMainThread)
-        
-        while !isExpired && shouldStop?() != true && !isCancelled && !isFinished {
+        startDate = Date()
+        while !isExpired && !isCancelled && !isFinished {
             let interval = max(self.interval ?? minInterval, minInterval)
             Thread.sleep(forTimeInterval: interval)
             DispatchQueue.main.async {
@@ -44,8 +44,16 @@ public class Repeat: QueueableOperation<Void> {
     }
     
     private var isExpired: Bool {
-        guard let duration = self.duration else { return false }
-        let currentDuration = abs(startDate.timeIntervalSinceNow)
-        return currentDuration >= duration
+        if let duration = self.duration {
+            let currentDuration = abs(startDate.timeIntervalSinceNow)
+            if currentDuration >= duration {
+                return true
+            }
+        }
+        if let shouldStop = shouldStop {
+            return shouldStop()
+        } else {
+            return false
+        }
     }
 }
