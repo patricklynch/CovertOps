@@ -2,6 +2,20 @@ import Foundation
 
 extension Array where Element : Operation {
     
+    public func after(_ dependency: Operation) -> [Operation] {
+        for operation in self {
+            operation.addDependency(dependency)
+        }
+        return self
+    }
+    
+    public func before(_ dependant: Operation) -> [Operation] {
+        for operation in self {
+            dependant.addDependency(operation)
+        }
+        return self
+    }
+    
     public func batched(size batchSize: Int = 10) -> [Operation] {
         var batched: [Operation] = []
         var dependencies: [Operation] = []

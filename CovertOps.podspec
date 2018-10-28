@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'CovertOps'
-  s.version          = '0.1.4'
+  s.version          = '0.1.5'
   s.summary          = 'A robust application framework built upon Operation and OperationQueue.'
   s.framework        = 'CoreData'
 

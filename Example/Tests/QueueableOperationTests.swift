@@ -7,12 +7,14 @@ class QueueableOperationTests: XCTestCase {
     
     func testQueueOperation() {
         let expectation = XCTestExpectation(description: "QueueableOperation")
-        ConvertToFloat(string: "1.0").queue() { output in
+        let operation = ConvertToFloat(string: "1.0")
+        operation.queue() { operationParam, output in
             XCTAssert(Thread.isMainThread)
             guard let output = output else {
                 XCTFail()
                 return
             }
+            XCTAssertEqual(operation, operationParam)
             XCTAssertEqual(output, 1.0)
             expectation.fulfill()
         }
@@ -22,7 +24,7 @@ class QueueableOperationTests: XCTestCase {
     
     func testQueueWithQueue() {
         let expectation = XCTestExpectation(description: "QueueableOperation")
-        ConvertToFloat(string: "1.4").queue(on: testQueue) { output in
+        ConvertToFloat(string: "1.4").queue(on: testQueue) { _, output in
             XCTAssert(Thread.isMainThread)
             guard let output = output else {
                 XCTFail()
@@ -37,7 +39,7 @@ class QueueableOperationTests: XCTestCase {
     
     func testPreferredQueue() {
         let expectation = XCTestExpectation(description: "QueueableOperation")
-        ConvertToInt(float: 0.01, providedPreferredQueue: testQueue).queue() { output in
+        ConvertToInt(float: 0.01, providedPreferredQueue: testQueue).queue() { _, output in
             XCTAssert(Thread.isMainThread)
             guard let output = output else {
                 XCTFail()
@@ -56,7 +58,7 @@ class QueueableOperationTests: XCTestCase {
         toInt.addDependency(toFloat)
         
         let expectation = XCTestExpectation(description: "QueueableOperation")
-        toFloat.queue() { _ in
+        toFloat.queue() { _,_ in
             guard let _: ConvertToFloat = toInt.typedDependency() else {
                 XCTFail()
                 return
@@ -69,23 +71,86 @@ class QueueableOperationTests: XCTestCase {
         }
         wait(for: [expectation], timeout: 1.0)
     }
+    
+    func testWillStartAndFinish() {
+        let toFloat = ConvertToFloat(string: "1.4")
+        let toInt = ConvertToInt(float: 1.4)
+        toInt.addDependency(toFloat)
+        
+        let expectation = XCTestExpectation(description: "QueueableOperation")
+        toInt.queue() { _,_ in
+            XCTAssertEqual(toInt.operationWillStartCalledCount, 1)
+            XCTAssertEqual(toInt.operationDidfinishCalledCount, 1)
+            XCTAssertEqual(toInt.output, toInt.outputProvidedOnFinish)
+            XCTAssertNotNil(toFloat.output)
+            XCTAssertEqual(toFloat.output, toInt.outputFromDependency())
+            
+            XCTAssertEqual(toFloat.operationWillStartCalledCount, 1)
+            XCTAssertEqual(toFloat.operationDidfinishCalledCount, 1)
+            XCTAssertNotNil(toFloat.output)
+            XCTAssertEqual(toFloat.output, toFloat.outputProvidedOnFinish)
+
+            expectation.fulfill()
+        }
+        toFloat.queue()
+        wait(for: [expectation], timeout: 1.0)
+    }
+    
+    func testWillStartAndFinishArray() {
+        let operations = [
+            ConvertToFloat(string: "1.9"),
+            ConvertToFloat(string: "2.8"),
+            ConvertToFloat(string: "3.7"),
+            ConvertToFloat(string: "4.6")
+        ]
+        
+        let expectation = XCTestExpectation(description: "QueueableOperation")
+        operations.queue() { operationsParam in
+            XCTAssertEqual(operationsParam.count, operations.count)
+            for op in operations {
+                XCTAssertEqual(op.operationWillStartCalledCount, 1)
+                XCTAssertEqual(op.operationDidfinishCalledCount, 1)
+                XCTAssertNotNil(op.output)
+                XCTAssertEqual(op.output, op.outputProvidedOnFinish)
+            }
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 1.0)
+    }
 }
 
-class ConvertToFloat: QueueableOperation<Float> {
+class ConvertToFloat: SyncOperation<Float> {
     let string: String
+    
+    private(set) var operationWillStartCalledCount: Int = 0
+    private(set) var operationDidfinishCalledCount: Int = 0
+    private(set) var outputProvidedOnFinish: Float?
     
     init(string: String) {
         self.string = string
     }
     
-    override func main() {
-        output = Float(string)
+    override func execute() -> Float? {
+        return Float(string)
+    }
+    
+    override func operationWillStart() {
+        operationWillStartCalledCount += 1
+    }
+    
+    override func operationDidFinish(output: Float?) {
+        operationDidfinishCalledCount += 1
+        outputProvidedOnFinish = output
     }
 }
 
-class ConvertToInt: QueueableOperation<Int> {
+class ConvertToInt: SyncOperation<Int> {
     let float: Float
     let providedPreferredQueue: OperationQueue?
+    
+    private(set) var operationWillStartCalledCount: Int = 0
+    private(set) var operationDidfinishCalledCount: Int = 0
+    private(set) var outputProvidedOnFinish: Int?
     
     init(float: Float, providedPreferredQueue: OperationQueue? = nil) {
         self.float = float
@@ -100,7 +165,17 @@ class ConvertToInt: QueueableOperation<Int> {
         }
     }
     
-    override func main() {
-        output = Int(float)
+    override func execute() -> Int? {
+        return Int(float)
+    }
+    
+    override func operationWillStart() {
+        operationWillStartCalledCount += 1
+    }
+    
+    override func operationDidFinish(output: Int?) {
+        operationDidfinishCalledCount += 1
+        outputProvidedOnFinish = output
     }
 }
+

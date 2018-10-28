@@ -7,7 +7,7 @@ class ImportantTodoService {
     
     func reload() {
         let randomId: Int = Array(1..<100).randomElement() ?? 1
-        DownloadData(id: randomId).queue() { result in
+        DownloadData(id: randomId).queue() { _, result in
             guard let result = result,
                 case .success(let data) = result else {
                     return

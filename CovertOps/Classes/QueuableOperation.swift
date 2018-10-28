@@ -1,10 +1,18 @@
 import UIKit
 
-private var _retainedOperations = Set<Operation>()
+var retainedOperations = Set<Operation>()
 
 open class QueueableOperation<OutputType>: Operation {
     
-    final public var output: OutputType?
+    private var didSetOutput = false
+    final public var output: OutputType? {
+        didSet {
+            guard !didSetOutput else { return }
+            didSetOutput = true
+            
+            operationDidFinish(output: output)
+        }
+    }
     
     public final func outputFromDependency<T>() -> T? {
         let typedDependencies = dependencies.compactMap { $0 as? QueueableOperation<T> }
@@ -17,21 +25,14 @@ open class QueueableOperation<OutputType>: Operation {
     }
     
     @discardableResult
-    public final func followed<T>(by nextOperation: QueueableOperation<T>, mainQueueCompletionBlock: ((T?)->())? = nil) -> QueueableOperation<OutputType> {
-        nextOperation.addDependency(self)
-        nextOperation.queue(mainQueueCompletionBlock: mainQueueCompletionBlock)
-        return self
-    }
-    
-    @discardableResult
-    public final func then(_ mainQueueCompletionBlock: @escaping (QueueableOperation<OutputType>, OutputType?)->()) -> QueueableOperation<OutputType> {
+    public final func then(_ mainQueueCompletionBlock: ((QueueableOperation<OutputType>, OutputType?)->())?) -> QueueableOperation<OutputType> {
+        retainedOperations.insert(self)
         completionBlock = { [weak self] in
-            guard let strelf = self else {
-                return
-            }
+            guard let self = self else { return }
+            
             DispatchQueue.main.async {
-                mainQueueCompletionBlock(strelf, strelf.output)
-                _retainedOperations.remove(strelf)
+                mainQueueCompletionBlock?(self, self.output)
+                retainedOperations.remove(self)
             }
         }
         return self
@@ -44,15 +45,23 @@ open class QueueableOperation<OutputType>: Operation {
     }
     
     @discardableResult
-    public final func following(_ dependency: Operation) -> QueueableOperation<OutputType> {
+    public final func before(_ dependants: [Operation]) -> QueueableOperation<OutputType> {
+        for dependant in dependants {
+            dependant.addDependency(self)
+        }
+        return self
+    }
+    
+    @discardableResult
+    public final func after(_ dependency: Operation) -> QueueableOperation<OutputType> {
         addDependency(dependency)
         return self
     }
     
     @discardableResult
-    public final func following(_ operations: [Operation]) -> QueueableOperation<OutputType> {
-        for op in operations {
-            addDependency(op)
+    public final func after(_ dependencies: [Operation]) -> QueueableOperation<OutputType> {
+        for dependency in dependencies {
+            addDependency(dependency)
         }
         return self
     }
@@ -66,23 +75,17 @@ open class QueueableOperation<OutputType>: Operation {
     @discardableResult
     open func queue(
         on queue: OperationQueue? = nil,
-        mainQueueCompletionBlock: ((OutputType?)->())? = nil) -> QueueableOperation<OutputType> {
-        if let mainQueueCompletionBlock = mainQueueCompletionBlock {
-            completionBlock = { [weak self] in
-                guard let strelf = self else {
-                    return
-                }
-                DispatchQueue.main.async {
-                    mainQueueCompletionBlock(strelf.output)
-                    _retainedOperations.remove(strelf)
-                }
-            }
-            _retainedOperations.insert(self)
-        }
+        mainQueueCompletionBlock: ((QueueableOperation<OutputType>, OutputType?)->())? = nil) -> QueueableOperation<OutputType> {
+        then(mainQueueCompletionBlock)
+        operationWillStart()
         
         let finalQueue = queue ?? preferredQueue
         finalQueue.addOperation(self)
         return self
     }
+    
+    open func operationWillStart() { }
+    
+    open func operationDidFinish(output: OutputType?) { }
 }
 

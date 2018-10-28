@@ -2,6 +2,12 @@ import Foundation
 
 private let _defaultQueue = OperationQueue()
 
+protocol StartableOperation {
+    func operationWillStart()
+}
+
+extension QueueableOperation: StartableOperation {}
+
 extension OperationQueue {
     
     public static func serialQueue() -> OperationQueue {
@@ -40,9 +46,12 @@ extension OperationQueue {
             }
             final.addDependency(op)
         }
-        let allOperations = ops + [final]
-        addOperations(allOperations, waitUntilFinished: false)
-        return allOperations
+        for op in ops as? [StartableOperation] ?? [] {
+            op.operationWillStart()
+        }
+        addOperations(ops, waitUntilFinished: false)
+        addOperation(final)
+        return ops
     }
 }
 
