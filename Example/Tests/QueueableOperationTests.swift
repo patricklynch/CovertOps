@@ -117,6 +117,53 @@ class QueueableOperationTests: XCTestCase {
         }
         wait(for: [expectation], timeout: 1.0)
     }
+    
+    func testExclusive() {
+        let operationA = CreateUUID().exclusive()
+        let nonExclusiveOperation = CreateUUID()
+        XCTAssertNotEqual(operationA, nonExclusiveOperation)
+        
+        let operationB = CreateUUID().exclusive()
+        XCTAssertEqual(operationA, operationB)
+        
+        let expectationA = XCTestExpectation(description: "QueueableOperation A")
+        operationA.queue() { operation, output in
+            XCTAssertEqual(operation, operationA)
+            XCTAssertEqual(operationA.output, output)
+            
+            let operationD = CreateUUID().exclusive()
+            XCTAssertNotEqual(operationA, operationD)
+            
+            expectationA.fulfill()
+        }
+        
+        let expectationB = XCTestExpectation(description: "QueueableOperation B")
+        operationB.queue() { operation, output in
+            XCTAssertEqual(operation, operationA)
+            XCTAssertEqual(operation, operationB)
+            XCTAssertEqual(operationB.output, output)
+            
+            expectationB.fulfill()
+        }
+        
+        wait(for: [expectationA, expectationB], timeout: 1.0)
+        
+        XCTAssertEqual(operationB.output, operationA.output)
+        
+        let operationC = CreateUUID().exclusive()
+        XCTAssertNotEqual(operationA, operationC)
+        XCTAssertNotEqual(operationB, operationC)
+    }
+}
+
+class CreateUUID: QueueableOperation<String>, ExclusiveHashable {
+    
+    var exclusiveHashValue: Int { return 0 }
+    
+    override func main() {
+        Thread.sleep(forTimeInterval: 0.1)
+        output = UUID().uuidString
+    }
 }
 
 class ConvertToFloat: SyncOperation<Float> {

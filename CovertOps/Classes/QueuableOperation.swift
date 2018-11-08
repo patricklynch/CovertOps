@@ -1,6 +1,11 @@
 import UIKit
 
+public protocol ExclusiveHashable {
+    var exclusiveHashValue: Int { get }
+}
+
 var retainedOperations = Set<Operation>()
+var exclusiveOperations = NSHashTable<Operation>(options: [.weakMemory])
 
 open class QueueableOperation<OutputType>: Operation {
     
@@ -11,6 +16,33 @@ open class QueueableOperation<OutputType>: Operation {
             didSetOutput = true
             
             operationDidFinish(output: output)
+        }
+    }
+    
+    private func existingExclusiveOperation() -> QueueableOperation<OutputType>? {
+        guard let operation = exclusiveOperations.allObjects.first(where: { type(of: $0) == type(of: self) }) else {
+            return nil
+        }
+        if let exclusiveOperation = operation as? ExclusiveHashable,
+            let exclusiveSelf = self as? ExclusiveHashable {
+            if exclusiveOperation.exclusiveHashValue == exclusiveSelf.exclusiveHashValue {
+                return self
+            } else {
+                return nil
+            }
+        } else {
+            return operation as? QueueableOperation<OutputType>
+        }
+    }
+    
+    public final func exclusive() -> QueueableOperation {
+        if let existingOperation = existingExclusiveOperation(),
+            !existingOperation.isCancelled,
+            !existingOperation.isFinished {
+            return existingOperation
+        } else {
+            exclusiveOperations.add(self)
+            return self
         }
     }
     
@@ -27,9 +59,10 @@ open class QueueableOperation<OutputType>: Operation {
     @discardableResult
     public final func then(_ mainQueueCompletionBlock: ((QueueableOperation<OutputType>, OutputType?)->())?) -> QueueableOperation<OutputType> {
         retainedOperations.insert(self)
+        let existingCompletionBlock = completionBlock
         completionBlock = { [weak self] in
             guard let self = self else { return }
-            
+            existingCompletionBlock?()
             DispatchQueue.main.async {
                 mainQueueCompletionBlock?(self, self.output)
                 retainedOperations.remove(self)
@@ -76,11 +109,18 @@ open class QueueableOperation<OutputType>: Operation {
     open func queue(
         on queue: OperationQueue? = nil,
         mainQueueCompletionBlock: ((QueueableOperation<OutputType>, OutputType?)->())? = nil) -> QueueableOperation<OutputType> {
-        then(mainQueueCompletionBlock)
-        operationWillStart()
         
         let finalQueue = queue ?? preferredQueue
-        finalQueue.addOperation(self)
+        if let existingOperation = existingExclusiveOperation() {
+            if !existingOperation.isExecuting && !existingOperation.isCancelled && !existingOperation.isFinished {
+                finalQueue.addOperation(existingOperation)
+            }
+            existingOperation.then(mainQueueCompletionBlock)
+        } else {
+            then(mainQueueCompletionBlock)
+            operationWillStart()
+            finalQueue.addOperation(self)
+        }
         return self
     }
     

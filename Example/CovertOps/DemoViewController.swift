@@ -12,24 +12,14 @@ class DemoViewController: UIViewController, UITableViewDelegate {
         let demo = dataSource.demos[indexPath.row]
         switch demo {
         case .showDetail:
-            
-            // You can use this single line from anywhere in the application
-            // to displ ay a detail view controller.  No need for seques or repeating
-            // the `present(_:animated:completion)` code.
             ShowDetail(demo: demo, from: self).queue()
             
         case .showMultipleAlerts:
-            
-            // You can create an array of operations and queue them together.
             let operations = [
                 ShowAlert(from: self),
                 ShowAlert(from: self),
                 ShowAlert(from: self)
             ]
-            
-            // Using `chained()` will set each operation as a dependency to the operation
-            // that comes next, ensuring that execution does not start until the previous
-            // operation is finished.
             operations.chained().queue() { operations in
                 print("Finished showing \(operations.count) alerts.")
             }

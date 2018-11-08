@@ -16,10 +16,6 @@ open class AsyncOperation<OutputType>: QueueableOperation<OutputType> {
     
     private let semaphore = DispatchSemaphore(value: 0)
     
-    open func createPrecompletionDependants() -> [Operation] {
-        return []
-    }
-    
     open func execute() {
         assertionFailure("Please implement this method in a subclass.")
     }
@@ -38,11 +34,7 @@ open class AsyncOperation<OutputType>: QueueableOperation<OutputType> {
     
     public final func finish(output: OutputType? = nil) {
         self.output = output
-        
-        let precompletionDependants = createPrecompletionDependants()
-        precompletionDependants.queue() { _ in
-            self.semaphore.signal()
-        }
+        semaphore.signal()
     }
     
     override open func cancel() {
