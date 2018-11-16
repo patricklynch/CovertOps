@@ -7,7 +7,7 @@
 [![Platform](https://img.shields.io/cocoapods/p/CovertOps.svg?style=flat)](https://cocoapods.org/pods/CovertOps)
 [![Language](https://img.shields.io/badge/swift-4.2-orange.svg)](https://developer.apple.com/swift)
 
-`CovertOps` uses the `Operation` and `OperationQueue` classes from Apple's _Foundation_ framework to provide flexible, concise and easy control over robust application behaviors that are often difficult to achieve.  This includes precise timing, mutual exclusivity, observation, thread safety, sequencing, throttling, asynchronous behavior and dependency management.
+`CovertOps` uses the `Operation` and `OperationQueue` classes from Apple's _Foundation_ framework to provide flexible, concise and easy control over robust application behaviors that are often difficult to achieve.  This includes precise timing, mutual exclusivity, observation, thread safety, sequencing, throttling, asynchronous behavior and dependency management.  It has a look and feel similar to reactive proramming but in its core design favors an object-oriented approach over totally functional.
 
 Apple's operation classes are simple and powerful but were designed decades ago in Objective-C.  This framework adds many wrappers and convenience methods for a modern, functional-inspired Swift syntax that is much faster and easier to use.  There's also a handlful of utlity operations that solve common problems and some new features added to the behavior of operations that will make your own custom subclasses much more powerful.
 
@@ -20,8 +20,6 @@ For a better unstanding of operations and the principles upon which the framewor
 - [Advanced NSOperations](https://developer.apple.com/videos/play/wwdc2015/226/) from WWDC 2015 by Dave Delong
 
 ## Example
-
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 ## Installation
 
